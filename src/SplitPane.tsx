@@ -147,7 +147,10 @@ const SplitPane = ({
     const paneFollow = !(performanceMode && isDragging);
     const paneSizes = paneFollow ? sizes : cacheSizes.current.sizes;
     const panePoses = paneFollow ? sashPosSizes:  cacheSizes.current.sashPosSizes;
-
+    console.log('just test', paneSizes)
+    // @ts-ignore
+    //todo 更优雅的形式处理
+    window.AliLowCodeEngine?.event.emit('SplitPane', paneSizes);
     return (
         <div
             className={classNames(
